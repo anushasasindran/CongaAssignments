@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="9.904309">
+    <testcase classname="API Testing for OpenWeatherMap" name="Test 1: Validate that attempt to register a weather station &quot;without&quot; an APIKey (response code = 401 - error)" time="5.948876">
+        <failure message="java.lang.NullPointerException&#13;&#10;&#9;at APItesting.resouces.OpenWeatherMap.getValueByKey(OpenWeatherMap.java:80)&#13;&#10;&#9;at APItesting.stepDefinitions.StepsScenario1to5.iShouldSeeTheMessageBodyWithAs(StepsScenario1to5.java:34)&#13;&#10;&#9;at ✽.Then I should see the message body with &quot;code&quot; as &quot;401&quot;(Scenarios1to5.feature:11)&#13;&#10;">
+            <![CDATA[When I have registered a new station to OpenWhetherMap "without" APIKey and following values.passed
+Then I should see the message body with "code" as "401".....................failed
+And I should see the message body with "message" as "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.".skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at APItesting.resouces.OpenWeatherMap.getValueByKey(OpenWeatherMap.java:80)
+	at APItesting.stepDefinitions.StepsScenario1to5.iShouldSeeTheMessageBodyWithAs(StepsScenario1to5.java:34)
+	at ✽.Then I should see the message body with "code" as "401"(Scenarios1to5.feature:11)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="API Testing for OpenWeatherMap" name="Test 2 to Test 5:" time="2.157617">
+        <system-out>
+            <![CDATA[When I have registered a new station to OpenWhetherMap with values of "DEMO_TEST001","Test Station 001","33.33","-111.43","444".passed
+Then I have received HTTP response code of "201"............................passed
+Then I see my new station with values of "DEMO_TEST001","Test Station 001","33.33","-111.43","444".passed
+When I delete my latest station associated with my APIKey in OpenWeatherMap.passed
+Then I have received HTTP response code of "204"............................passed
+When I delete my latest station associated with my APIKey in OpenWeatherMap.passed
+Then I have received HTTP response code of "404"............................passed
+And I should see the message body with "message" as "Station not found".....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="API Testing for OpenWeatherMap" name="Test 2 to Test 5: 2" time="1.797816">
+        <system-out>
+            <![CDATA[When I have registered a new station to OpenWhetherMap with values of "DEMO_TEST002","Test Station 002","33.44","-122.44","444".passed
+Then I have received HTTP response code of "201"............................passed
+Then I see my new station with values of "DEMO_TEST002","Test Station 002","33.44","-122.44","444".passed
+When I delete my latest station associated with my APIKey in OpenWeatherMap.passed
+Then I have received HTTP response code of "204"............................passed
+When I delete my latest station associated with my APIKey in OpenWeatherMap.passed
+Then I have received HTTP response code of "404"............................passed
+And I should see the message body with "message" as "Station not found".....passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
